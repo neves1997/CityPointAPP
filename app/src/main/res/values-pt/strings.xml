@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CityPointECGM</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="pass" translatable="false">Palavra-passe</string>
+    <string name="inf1" translatable="false">email@exemplo.com</string>
+    <string name="btlogin" translatable="false">Iniciar Sessão</string>
+    <string name="btnote" translatable="false">Notas Pessoais</string>
+</resources>
