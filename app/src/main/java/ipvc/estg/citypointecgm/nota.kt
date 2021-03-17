@@ -3,7 +3,6 @@ package ipvc.estg.citypointecgm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import dataclasse.PlaceNota
 
 class nota : AppCompatActivity() {
 
@@ -17,6 +16,7 @@ class nota : AppCompatActivity() {
 
 
     }
+
 
     fun insert(view: View) {
 
