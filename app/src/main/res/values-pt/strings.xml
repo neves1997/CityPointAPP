@@ -6,4 +6,11 @@
     <string name="inf1" translatable="false">email@exemplo.com</string>
     <string name="btlogin" translatable="false">Iniciar Sessão</string>
     <string name="btnote" translatable="false">Notas Pessoais</string>
+    <string name="txtit" translatable="false">Título</string>
+    <string name="txtext" translatable="false">Descrição</string>
+    <string name="txdate" translatable="false">Data</string>
+    <string name="inftit" translatable="false">Estrada</string>
+    <string name="inftex">Estrada cortada</string>
+    <string name="btguardar" translatable="false">Guardar</string>
+    <string name="btremove" translatable="false">Remover</string>
 </resources>

@@ -5,4 +5,12 @@
     <string name="inf1" translatable="false">example@email.com</string>
     <string name="btlogin" translatable="false">Login</string>
     <string name="btnote" translatable="false">Personal Notes</string>
+    <string name="txtit" translatable="false">Title</string>
+    <string name="txtext" translatable="false">Text</string>
+    <string name="txdate" translatable="false">Date</string>
+    <string name="inftit" translatable="false">Road</string>
+    <string name="inftex" translatable="false">Cut road</string>
+    <string name="date">__/__/____</string>
+    <string name="btguardar" translatable="false">Save</string>
+    <string name="btremove" translatable="false">Delete</string>
 </resources>
