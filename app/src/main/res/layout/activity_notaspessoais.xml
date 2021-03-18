@@ -7,17 +7,16 @@
     tools:context=".notaspessoais">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
 
         android:layout_width="411dp"
-        android:layout_height="559dp"
+        android:layout_height="520dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:listitem="@layout/recyclerline"
-        tools:ignore="MissingConstraints">
+        tools:listitem="@layout/recyclerline">
 
 
     </androidx.recyclerview.widget.RecyclerView>
