@@ -4,23 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".nota">
+    tools:context=".notaspessoais">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="520dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/recyclerline">
 
 
     </androidx.recyclerview.widget.RecyclerView>
-//coment
+
+
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fabbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="31dp"
@@ -31,7 +36,9 @@
         app:layout_constraintTop_toBottomOf="@+id/recycler_view"
         app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="MissingConstraints"
-        android:onClick="insert"/>
+        android:onClick="inserirnota"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

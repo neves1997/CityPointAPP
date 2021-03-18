@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CityPointECGM">
-        <activity android:name=".nota"></activity>
+        <activity android:name=".notaspessoais"></activity>
+        <activity android:name=".teste" />
+        <activity android:name=".AddNota" />
+        <activity android:name=".nota_activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

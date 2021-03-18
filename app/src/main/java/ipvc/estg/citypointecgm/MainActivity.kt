@@ -28,12 +28,15 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonnotas(view: View) {
 
-        val intent = Intent (this, nota::class.java).apply {
-        }
+            val intent = Intent (this,notaspessoais::class.java).apply {
+
+            }
 
         startActivity(intent)
+
+        }
+
 
     }
 
 
-}
