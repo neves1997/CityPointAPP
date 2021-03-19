@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import java.time.LocalDateTime
 
 class AddNota : AppCompatActivity() {
 
@@ -15,13 +16,24 @@ class AddNota : AppCompatActivity() {
     private lateinit var editNotaView3 : EditText
 
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_nota)
 
+
+        val date = LocalDateTime.now().toString().split("T")!!.toTypedArray()
+        val stdate = date[0]?.split("-")!!.toTypedArray()
+        val finaldate = stdate[2]+"-"+stdate[1]+"-"+stdate[0]
+
+
         editNotaView1 = findViewById(R.id.textitle)
         editNotaView2= findViewById(R.id.textexto)
         editNotaView3 = findViewById(R.id.textdate)
+
+        editNotaView3.setText(finaldate.toString())
 
 
 
@@ -32,15 +44,18 @@ class AddNota : AppCompatActivity() {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
                 val notatitulo = editNotaView1.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY,  notatitulo)
-                setResult(Activity.RESULT_OK,replyIntent)
+                replyIntent.putExtra(EXTRA_REPLY_TITULO,  notatitulo)
 
                 val notatexto = editNotaView2.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY1, notatexto)
+                replyIntent.putExtra(EXTRA_REPLY_TEXTO, notatexto)
 
                 val notadata = editNotaView3.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY2, notadata)
+                replyIntent.putExtra(EXTRA_REPLY_DATA, notadata)
+
+                setResult(Activity.RESULT_OK,replyIntent)
+
             }
+
 
             finish()
 
@@ -48,9 +63,9 @@ class AddNota : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY = "ipvc.estg.citypointecgm.REPLY"
-        const val EXTRA_REPLY1 = "ipvc.estg.citypointecgm.REPLY1"
-        const val EXTRA_REPLY2 = "ipvc.estg.citypointecgm.REPLY2"
+        const val EXTRA_REPLY_TITULO = "titulo"
+        const val EXTRA_REPLY_TEXTO = "texto"
+        const val EXTRA_REPLY_DATA = "data"
 
 
     }

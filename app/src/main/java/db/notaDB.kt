@@ -26,13 +26,13 @@ public abstract class notaDB : RoomDatabase() {
                     var Notadao = database.Notadao()
 
                     //Delete all content here.
-                    Notadao.deleteAll()
+                    //Notadao.deleteAll()
 
                     //add sample words
-                    var notaent = Notaent(1,"Rua Cortada","Não conseguimos passar","18/03/2021")
-                    Notadao.insert(notaent)
-                    notaent = Notaent(2,"Sem Semáforos","Estrada sem semáforos","18/03/2021")
-                    Notadao.insert(notaent)
+                    //var notaent = Notaent(1,"Rua Cortada","Não conseguimos passar","18/03/2021")
+                    //Notadao.insert(notaent)
+                    //notaent = Notaent(2,"Sem Semáforos","Estrada sem semáforos","18/03/2021")
+                    //Notadao.insert(notaent)
 
                 }
             }
