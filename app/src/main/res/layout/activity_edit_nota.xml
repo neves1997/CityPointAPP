@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNota">
+    tools:context=".EditNota">
+
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#00191717"
-        android:drawableBottom="@drawable/ic_baseline_exit_to_app_24"
-        android:onClick="sairapp"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/buttonsave"
+        android:layout_width="135dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/btguardar"
+        app:backgroundTint="#00B0FF"
+        app:layout_constraintEnd_toStartOf="@+id/buttondelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdate" />
 
     <Button
         android:id="@+id/button3"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:text="@string/addnote"
+        android:text="@string/editnote"
         android:textColor="#00B0FF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -45,16 +45,31 @@
 
 
 
+
     <Button
-        android:id="@+id/buttonsave"
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#00191717"
+        android:drawableBottom="@drawable/ic_baseline_exit_to_app_24"
+        android:onClick="sairapp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttondelete"
         android:layout_width="135dp"
         android:layout_height="44dp"
         android:layout_marginTop="200dp"
-        android:text="@string/btguardar"
+        android:text="@string/btremove"
         app:backgroundTint="#00B0FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonsave"
         app:layout_constraintTop_toBottomOf="@+id/textdate" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -137,5 +152,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textitle" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

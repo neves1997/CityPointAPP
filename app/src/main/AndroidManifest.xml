@@ -8,8 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.CityPointECGM">
-        <activity android:name=".notaspessoais"></activity>
+        <activity android:name=".EditNota"></activity>
+        <activity android:name=".notaspessoais" />
         <activity android:name=".teste" />
         <activity android:name=".AddNota" />
         <activity android:name=".nota_activity" />

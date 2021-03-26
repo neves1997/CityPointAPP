@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="221dp"
         android:layout_height="286dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_01"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="7dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -99,5 +101,18 @@
         app:layout_constraintTop_toBottomOf="@+id/button"
         android:onClick="buttonnotas"/>
 
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#00191717"
+        android:drawableBottom="@drawable/ic_baseline_exit_to_app_24"
+        android:onClick="sairapp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

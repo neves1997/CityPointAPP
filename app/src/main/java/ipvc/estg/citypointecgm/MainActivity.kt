@@ -1,17 +1,20 @@
 package ipvc.estg.citypointecgm
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.View
-import android.widget.Toast
-import ipvc.estg.citypointecgm.MainActivity as MainActivity1
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
+
+
+
+
 
         //classe
     }
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonnotas(view: View) {
 
-            val intent = Intent (this,notaspessoais::class.java).apply {
+            val intent = Intent(this, notaspessoais::class.java).apply {
 
             }
 
@@ -36,7 +39,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
+    fun sairapp(view: View) {
+        finishAffinity()
+        System.exit(0)
     }
+
+
+}
 
 
