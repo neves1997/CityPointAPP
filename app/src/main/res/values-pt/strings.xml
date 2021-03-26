@@ -13,4 +13,7 @@
     <string name="inftex">Estrada cortada</string>
     <string name="btguardar" translatable="false">Guardar</string>
     <string name="btremove" translatable="false">Remover</string>
+    <string name="note" translatable="false">Notas Pessoais</string>
+    <string name="addnote" translatable="false">Adicionar nota</string>
+    <string name="editnote">Editar Nota</string>
 </resources>

@@ -1,10 +1,10 @@
 package ipvc.estg.citypointecgm
 
 import adapter.NotaAdapter
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -13,14 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import entities.Notaent
 import viewModel.NotaViewModel
-import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 
 
-class notaspessoais : AppCompatActivity() {
+
+class notaspessoais : AppCompatActivity(), CellClickListener {
+
 
     private lateinit var notaViewModel: NotaViewModel
     private val newNotaActivityRequestCode = 1
+    private val editNotaActivityCode = 2
+
 
 
     val date = LocalDateTime.now().toString().split("T")!!.toTypedArray()
@@ -32,11 +35,13 @@ class notaspessoais : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notaspessoais)
+        supportActionBar?.hide()
+
 
 
         // recycler view
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        val adapter = NotaAdapter(this)
+        val adapter = NotaAdapter(this,this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -57,13 +62,19 @@ class notaspessoais : AppCompatActivity() {
 
     }
 
+
+
+
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == newNotaActivityRequestCode && resultCode == Activity.RESULT_OK) {
-           val titulo = data?.getStringExtra(AddNota.EXTRA_REPLY_TITULO)
-           val texto = data?.getStringExtra(AddNota.EXTRA_REPLY_TEXTO)
-
+        if (requestCode == newNotaActivityRequestCode){
+            if (resultCode == Activity.RESULT_OK) {
+           val titulo = data?.getStringExtra(AddNota.EXTRA_TITULO).toString()
+           val texto = data?.getStringExtra(AddNota.EXTRA_TEXTO).toString()
+            val data = data?.getStringExtra(AddNota.EXTRA_DATA).toString()
 
             if (titulo!=null && texto!=null && data!=null) {
                 val notaent = Notaent(titulo = titulo, texto = texto, data = finaldate)
@@ -79,7 +90,70 @@ class notaspessoais : AppCompatActivity() {
             ).show()
 
         }
+
+        } else if (requestCode == editNotaActivityCode) {
+            if (resultCode == Activity.RESULT_OK){
+                if (data?.action == "DELETE"){
+                    val id = data?.getStringExtra(EXTRA_ID).toString()
+                    notaViewModel.delete(Integer.parseInt(id))
+
+                } else {
+                    val id = data?.getStringExtra(EXTRA_ID).toString()
+                    val titulo = data?.getStringExtra(EXTRA_TITULO).toString()
+                    val texto = data?.getStringExtra(EXTRA_TEXTO).toString()
+                    val data = data?.getStringExtra(EXTRA_DATA).toString()
+                    notaViewModel.update(Integer.parseInt(id), titulo, texto, data)
+
+                }
+
+            } else {
+                Toast.makeText(applicationContext,
+                        data?.getStringExtra(EXTRA_ERRO).toString(),
+                        Toast.LENGTH_LONG).show()
+            }
+            
+        }
     }
 
+    override fun onCellClickListener(notaent: Notaent) {
 
-}
+        val id = notaent.id.toString()
+        val titulo = notaent.titulo
+        val texto = notaent.texto
+        val data = notaent.data
+        val intent = Intent(this,EditNota::class.java).apply {
+            putExtra(EXTRA_ID, id)
+            putExtra(EXTRA_TITULO, titulo)
+            putExtra(EXTRA_TEXTO, texto)
+            putExtra(EXTRA_DATA,data)
+
+        }
+
+        startActivityForResult(intent, editNotaActivityCode)
+
+    }
+
+    companion object {
+        const val EXTRA_ID = "ID"
+        const val EXTRA_TITULO = "TITULO"
+        const val EXTRA_TEXTO = "TEXTO"
+        const val EXTRA_DATA = "DATA"
+        const val EXTRA_ERRO = "ERRO"
+
+    }
+
+    fun sairapp(view: View) {
+        finishAffinity()
+        System.exit(0)
+
+    }
+
+    fun voltar(view: View) {
+        val intent = Intent(this, MainActivity::class.java).apply {
+
+        }
+
+        startActivity(intent)
+    }
+
+    }

@@ -4,7 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNota">
+    tools:context=".EditNota">
+
+
+    <Button
+        android:id="@+id/buttonsave"
+        android:layout_width="135dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/btguardar"
+        app:backgroundTint="#00B0FF"
+        app:layout_constraintEnd_toStartOf="@+id/buttondelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textexto" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="#00191717"
+        android:drawableBottom="@drawable/ic_baseline_arrow_back_ios_new_24"
+        android:onClick="voltar"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/editnote"
+        android:textColor="#00B0FF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     <Button
         android:id="@+id/button4"
@@ -19,54 +59,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="45dp"
-        android:background="#00191717"
-        android:drawableBottom="@drawable/ic_baseline_arrow_back_ios_new_24"
-        android:onClick="voltar"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/addnote"
-        android:textColor="#00B0FF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <Button
-        android:id="@+id/buttonsave"
+        android:id="@+id/buttondelete"
         android:layout_width="135dp"
         android:layout_height="44dp"
-        android:layout_marginTop="200dp"
-        android:text="@string/btguardar"
-        app:backgroundTint="#00B0FF"
+        android:layout_marginTop="30dp"
+        android:text="@string/btremove"
+        app:backgroundTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textdate" />
+        app:layout_constraintStart_toEndOf="@+id/buttonsave"
+        app:layout_constraintTop_toBottomOf="@+id/textexto" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textexto"
         android:layout_width="299dp"
         android:layout_height="44dp"
+        android:layout_marginStart="56dp"
         android:hint="@string/inftex"
         android:textColorHighlight="#000000"
         android:textColorLink="#2196F3"
         android:textCursorDrawable="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -74,29 +88,27 @@
         android:id="@+id/textdate"
         android:layout_width="299dp"
         android:layout_height="44dp"
+        android:layout_marginStart="32dp"
         android:enabled="false"
         android:text="texto"
         android:textColorHighlight="#000000"
         android:textColorLink="#2196F3"
         android:textCursorDrawable="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textitle"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:text="@string/txdate"
         android:textColor="#26B6FF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textexto" />
+        app:layout_constraintStart_toEndOf="@+id/textitle"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView4"
@@ -115,12 +127,11 @@
         android:id="@+id/textitle"
         android:layout_width="299dp"
         android:layout_height="44dp"
+        android:layout_marginStart="56dp"
         android:hint="@string/inftit"
         android:textColorHighlight="#000000"
         android:textColorLink="#2196F3"
         android:textCursorDrawable="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -137,5 +148,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textitle" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package adapter
 
+import ipvc.estg.citypointecgm.CellClickListener
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import entities.Notaent
 import ipvc.estg.citypointecgm.R
 
 class NotaAdapter internal constructor(
-    context: Context
+    context: Context, private val cellClickListener: CellClickListener
 ) : RecyclerView.Adapter<NotaAdapter.NotaViewHolder>(){
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -34,13 +35,29 @@ class NotaAdapter internal constructor(
         holder.notatitle.text = current.titulo
         holder.notatexto.text = current.texto
         holder.notadata.text = current.data
+
+
+
+        holder.itemView.setOnClickListener{
+            cellClickListener.onCellClickListener(current)
+
+        }
+
+
     }
+
+
 
     internal fun setNotas(notaent: List<Notaent>) {
         this.notaent = notaent
         notifyDataSetChanged()
     }
 
+
+
     override fun getItemCount() = notaent.size
+
+
+
 
 }

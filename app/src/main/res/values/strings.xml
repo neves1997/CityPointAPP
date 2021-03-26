@@ -13,4 +13,7 @@
     <string name="date">__/__/____</string>
     <string name="btguardar" translatable="false">Save</string>
     <string name="btremove" translatable="false">Delete</string>
+    <string name="note" translatable="false">Notes</string>
+    <string name="addnote" translatable="false">Add Note</string>
+    <string name="editnote" translatable="false">Edit Note</string>
 </resources>
