@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CityPointECGM</string>
-    <string name="email" translatable="false">Email</string>
+    <string name="user" translatable="false">User Name</string>
     <string name="pass" translatable="false">Password</string>
-    <string name="inf1" translatable="false">example@email.com</string>
+    <string name="inf1" translatable="false">example</string>
     <string name="btlogin" translatable="false">Login</string>
     <string name="btnote" translatable="false">Personal Notes</string>
     <string name="txtit" translatable="false">Title</string>
@@ -16,4 +16,18 @@
     <string name="note" translatable="false">Notes</string>
     <string name="addnote" translatable="false">Add Note</string>
     <string name="editnote" translatable="false">Edit Note</string>
+    <string name="lembrar" translatable="false">remember</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="login_p" translatable="false">login_p</string>
+    <string name="login_shared" translatable="false">login_shared</string>
+    <string name="nome" translatable="false">nome</string>
+    <string name="id_utl" translatable="false">id_utl</string>
+    <string name="welcome" translatable="false">Welcome</string>
+    <string name="maps" translatable="false">maps</string>
+    <string name="report" translatable="false">Report</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="erro_login" translatable="false">Invalid</string>
+    <string name="id_ut" translatable="false">id_ut</string>
+
+
 </resources>

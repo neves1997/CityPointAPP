@@ -16,4 +16,16 @@
     <string name="note" translatable="false">Notas Pessoais</string>
     <string name="addnote" translatable="false">Adicionar nota</string>
     <string name="editnote">Editar Nota</string>
+    <string name="lembrar" translatable="false">Lembrar</string>
+    <string name="user" translatable="false">Nome Utilizador</string>
+    <string name="login_p" translatable="false">login_p</string>
+    <string name="login_shared" translatable="false">login_shared</string>
+    <string name="nome" translatable="false">nome</string>
+    <string name="id_utl" translatable="false">id_utl</string>
+    <string name="welcome" translatable="false">Bem-Vindo</string>
+    <string name="maps" translatable="false">Mapa</string>
+    <string name="report" translatable="false">Reportações</string>
+    <string name="erro_login" translatable="false">Credenciais inválidas</string>
+
+
 </resources>
